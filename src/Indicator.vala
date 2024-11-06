@@ -83,6 +83,10 @@ public class Notifications.Indicator : Wingpanel.Indicator {
                     notify_settings.set_boolean ("do-not-disturb", !notify_settings.get_boolean ("do-not-disturb"));
                     return Gdk.EVENT_STOP;
                 }
+                else if (e.button == Gdk.BUTTON_RIGHT) {
+                    clear_all_notification_entries();
+                    return Gdk.EVENT_STOP;
+                }
 
                 return Gdk.EVENT_PROPAGATE;
             });
